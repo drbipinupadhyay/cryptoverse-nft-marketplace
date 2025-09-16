@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CryptoVerse - Premier NFT Marketplace | Buy, Sell & Trade NFTs</title>
+    <meta name="description" content="CryptoVerse is the premier NFT marketplace for buying, selling, and trading digital art, collectibles, and unique NFTs. Connect your wallet and start trading today.">
+    <meta name="keywords" content="NFT marketplace, buy NFTs, sell NFTs, digital art, crypto collectibles, blockchain, ethereum">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="CryptoVerse - Premier NFT Marketplace">
+    <meta property="og:description" content="Trade, Create & Collect Extraordinary NFTs on the most trusted marketplace">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://cryptoverse-nft.com">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎨</text></svg>">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loading-spinner"></div>
+        <h3>Loading CryptoVerse...</h3>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-cube"></i>
+                <span>CryptoVerse</span>
+            </div>
+            
+            <div class="nav-menu" id="nav-menu">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#explore" class="nav-link">Explore</a>
+                <a href="#create" class="nav-link">Create</a>
+                <a href="#marketplace" class="nav-link">Marketplace</a>
+                <a href="#about" class="nav-link">About</a>
+            </div>
+            
+            <div class="nav-actions">
+                <div class="search-container">
+                    <input type="text" id="search-input" class="search-input" placeholder="Search NFTs...">
+                    <i class="fas fa-search search-icon"></i>
+                </div>
+                
+                <button class="btn btn-primary" id="connect-wallet">
+                    <i class="fas fa-wallet"></i>
+                    <span class="wallet-text">Connect Wallet</span>
+                </button>
+                
+                <button class="nav-toggle" id="nav-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <div class="hero-particles"></div>
+        </div>
+        
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Trade, Create & Collect<br><span class="gradient-text">Extraordinary NFTs</span></h1>
+                <p class="hero-description">Discover, buy and sell extraordinary NFTs on the world's first and largest NFT marketplace</p>
+                
+                <div class="hero-buttons">
+                    <button class="btn btn-primary btn-large" onclick="scrollToSection('explore')">
+                        <i class="fas fa-compass"></i>
+                        Explore NFTs
+                    </button>
+                    <button class="btn btn-secondary btn-large" onclick="scrollToSection('create')">
+                        <i class="fas fa-plus"></i>
+                        Create NFT
+                    </button>
+                </div>
+                
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="250000">0</div>
+                        <div class="stat-label">NFTs Sold</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="15000">0</div>
+                        <div class="stat-label">Artists</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="50">0</div>
+                        <div class="stat-label">Million Volume</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured NFTs -->
+    <section id="explore" class="featured-nfts">
+        <div class="container">
+            <div class="section-header">
+                <h2>Featured NFTs</h2>
+                <p>Discover the most outstanding NFTs in all topics of life</p>
+            </div>
+            
+            <div class="category-filter">
+                <button class="filter-btn active" data-category="all">All</button>
+                <button class="filter-btn" data-category="art">Art</button>
+                <button class="filter-btn" data-category="gaming">Gaming</button>
+                <button class="filter-btn" data-category="music">Music</button>
+                <button class="filter-btn" data-category="sports">Sports</button>
+            </div>
+            
+            <div class="nft-grid" id="nft-grid">
+                <!-- NFTs will be loaded here by JavaScript -->
+            </div>
+            
+            <div class="load-more-container">
+                <button class="btn btn-secondary" id="load-more">Load More NFTs</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Top Creators -->
+    <section class="top-creators">
+        <div class="container">
+            <div class="section-header">
+                <h2>Top Creators</h2>
+                <p>Meet the most successful creators on CryptoVerse</p>
+            </div>
+            
+            <div class="creators-grid" id="creators-grid">
+                <!-- Creators will be loaded here by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2>How It Works</h2>
+                <p>Create, sell and collect NFTs in just a few simple steps</p>
+            </div>
+            
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-icon">
+                        <i class="fas fa-wallet"></i>
+                    </div>
+                    <h3>Connect Your Wallet</h3>
+                    <p>Connect your MetaMask or other compatible wallet to start trading</p>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>Browse Collection</h3>
+                    <p>Discover amazing NFTs from talented creators around the world</p>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <h3>Buy or Bid</h3>
+                    <p>Buy NFTs instantly or place bids in exciting auctions</p>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-icon">
+                        <i class="fas fa-coins"></i>
+                    </div>
+                    <h3>Earn Royalties</h3>
+                    <p>Create NFTs and earn royalties on every future sale</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Create NFT Section -->
+    <section id="create" class="create-nft">
+        <div class="container">
+            <div class="create-content">
+                <div class="create-info">
+                    <h2>Create Your Own NFT</h2>
+                    <p>Turn your creativity into valuable digital assets. Upload your artwork, set your price, and start earning royalties.</p>
+                    
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check"></i> Upload any digital file</li>
+                        <li><i class="fas fa-check"></i> Set custom royalties (up to 10%)</li>
+                        <li><i class="fas fa-check"></i> List on marketplace instantly</li>
+                        <li><i class="fas fa-check"></i> Earn on every resale</li>
+                    </ul>
+                    
+                    <button class="btn btn-primary btn-large" id="create-nft-btn">
+                        <i class="fas fa-plus"></i>
+                        Start Creating
+                    </button>
+                </div>
+                
+                <div class="create-form" id="create-form" style="display: none;">
+                    <h3>Create New NFT</h3>
+                    <form id="nft-form">
+                        <div class="form-group">
+                            <label for="nft-file">Upload File</label>
+                            <div class="file-upload">
+                                <input type="file" id="nft-file" accept="image/*,video/*,audio/*">
+                                <div class="file-upload-text">
+                                    <i class="fas fa-cloud-upload-alt"></i>
+                                    <span>Drag and drop or click to upload</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="nft-name">NFT Name</label>
+                            <input type="text" id="nft-name" placeholder="Enter NFT name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="nft-description">Description</label>
+                            <textarea id="nft-description" placeholder="Describe your NFT" rows="4"></textarea>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="nft-price">Price (ETH)</label>
+                                <input type="number" id="nft-price" placeholder="0.00" step="0.01" min="0">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="nft-royalty">Royalty (%)</label>
+                                <input type="number" id="nft-royalty" placeholder="2.5" step="0.1" min="0" max="10">
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-large">
+                            <i class="fas fa-hammer"></i>
+                            Mint NFT
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Marketplace Section -->
+    <section id="marketplace" class="marketplace">
+        <div class="container">
+            <div class="section-header">
+                <h2>NFT Marketplace</h2>
+                <p>Browse and discover amazing NFTs from creators worldwide</p>
+            </div>
+            
+            <div class="marketplace-filters">
+                <div class="filter-group">
+                    <select id="sort-filter" class="filter-select">
+                        <option value="recent">Recently Added</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                        <option value="popular">Most Popular</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <select id="category-filter" class="filter-select">
+                        <option value="all">All Categories</option>
+                        <option value="art">Art</option>
+                        <option value="gaming">Gaming</option>
+                        <option value="music">Music</option>
+                        <option value="sports">Sports</option>
+                        <option value="virtual-real-estate">Virtual Real Estate</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="marketplace-grid" id="marketplace-grid">
+                <!-- NFTs will be loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>About CryptoVerse</h2>
+                    <p>CryptoVerse is the world's first and largest digital marketplace for crypto collectibles and non-fungible tokens (NFTs). Buy, sell, and discover exclusive digital items.</p>
+                    
+                    <div class="features-grid">
+                        <div class="feature-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <div>
+                                <h4>Secure Trading</h4>
+                                <p>Safe and secure blockchain transactions</p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <i class="fas fa-users"></i>
+                            <div>
+                                <h4>Global Community</h4>
+                                <p>Join millions of creators and collectors</p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <i class="fas fa-percentage"></i>
+                            <div>
+                                <h4>Low Fees</h4>
+                                <p>Only 2.5% transaction fee</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-stats">
+                    <div class="stat-card">
+                        <div class="stat-number">$50M+</div>
+                        <div class="stat-label">Total Volume</div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-number">100K+</div>
+                        <div class="stat-label">Active Users</div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-number">250K+</div>
+                        <div class="stat-label">NFTs Traded</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-cube"></i>
+                        <span>CryptoVerse</span>
+                    </div>
+                    <p>The world's first and largest digital marketplace for crypto collectibles and non-fungible tokens.</p>
+                    
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-discord"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-telegram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Marketplace</h4>
+                    <ul>
+                        <li><a href="#explore">Explore</a></li>
+                        <li><a href="#marketplace">All NFTs</a></li>
+                        <li><a href="#create">Create</a></li>
+                        <li><a href="#">Collections</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Platform Status</a></li>
+                        <li><a href="#">Partners</a></li>
+                        <li><a href="#">Gas Tracker</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 CryptoVerse. All rights reserved.</p>
+                <p>Built with ❤️ for the NFT community</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modals -->
+    <div id="nft-modal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <div id="modal-body">
+                <!-- NFT details will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <div id="wallet-modal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <div class="wallet-options">
+                <h3>Connect Your Wallet</h3>
+                <div class="wallet-option" data-wallet="metamask">
+                    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦊</text></svg>" alt="MetaMask">
+                    <span>MetaMask</span>
+                </div>
+                <div class="wallet-option" data-wallet="walletconnect">
+                    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔗</text></svg>" alt="WalletConnect">
+                    <span>WalletConnect</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success/Error Messages -->
+    <div id="notification" class="notification">
+        <div class="notification-content">
+            <span class="notification-text"></span>
+            <button class="notification-close">&times;</button>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="app.js"></script>
+</body>
+</html>
